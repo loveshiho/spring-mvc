@@ -2,6 +2,7 @@ package com.akai.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller // 交给spring实例化
 public class MyController {
@@ -18,6 +19,19 @@ public class MyController {
     public String nihaoController() {
         System.out.println("nihao controller");
         // return "/WEB-INF/view/nihao.jsp";
+        return "nihao";
+    }
+    @RequestMapping(value = {"/hi", "/haha"})
+    public void hiController() {
+        System.out.println("ha ha");
+    }
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public void testRequest() {
+        System.out.println("ni hao");
+    }
+    @RequestMapping(value = "/test2", method = RequestMethod.GET, params = {"username=root", "password"})
+    public String testRequest2() {
+        System.out.println("loveshiho");
         return "nihao";
     }
 }
