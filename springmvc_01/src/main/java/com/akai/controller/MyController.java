@@ -14,4 +14,10 @@ public class MyController {
         System.out.println("hello controller");
         return "hello.jsp";
     }
+    @RequestMapping("/nihao")
+    public String nihaoController() {
+        System.out.println("nihao controller");
+        // return "/WEB-INF/view/nihao.jsp";
+        return "nihao";
+    }
 }
