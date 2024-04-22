@@ -30,4 +30,7 @@
         <property name="prefix" value="/WEB-INF/view/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
+    <!--配置静态资源放行-->
+    <!--mapping url中的路径 location:对应的路径到项目哪个目录中去找对应的资源-->
+    <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
 </beans>
