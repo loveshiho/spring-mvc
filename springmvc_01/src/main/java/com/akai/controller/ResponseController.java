@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.InternalResourceView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 
@@ -42,5 +43,15 @@ public class ResponseController {
     @RequestMapping("/testRedirect2")
     public String testRedirect2() {
         return "redirect:redirect.jsp";
+    }
+    @RequestMapping("/testViewForward")
+    public View testViewForward() {
+        View v = new InternalResourceView("forward.jsp");
+        return v;
+    }
+    @RequestMapping("/testViewRedirect")
+    public View testViewRedirect() {
+        View v = new RedirectView("redirect.jsp");
+        return v;
     }
 }
