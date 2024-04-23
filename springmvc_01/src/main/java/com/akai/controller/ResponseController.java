@@ -5,6 +5,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.view.InternalResourceView;
 
 import java.io.IOException;
 
@@ -32,5 +34,13 @@ public class ResponseController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @RequestMapping("/testForWard2")
+    public String testForWard2() {
+        return "forward:forward.jsp";
+    }
+    @RequestMapping("/testRedirect2")
+    public String testRedirect2() {
+        return "redirect:redirect.jsp";
     }
 }
