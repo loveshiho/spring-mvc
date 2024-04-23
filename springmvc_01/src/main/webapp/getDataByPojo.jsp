@@ -20,6 +20,14 @@
         <input type="checkbox" name="uhobby" value="3"> 排球
         <br>
         <input type="text" name="birthday">
+        <br>
+        宠物:
+        <p>
+            宠物1: 名字:<input type="text" name="pets[0].pname" >类型:<input type="text" name="pets[0].ptype">
+        </p>
+        <p>
+            宠物2: 名字:<input type="text" name="pets[1].pname" >类型:<input type="text" name="pets[1].ptype">
+        </p>
         <input type="submit">
     </form>
     <form action="getDataByDate">

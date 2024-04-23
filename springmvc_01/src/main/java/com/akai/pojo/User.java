@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,4 +17,5 @@ public class User {
     private String[] uhobby;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
+    private List<Pet> pets;
 }
