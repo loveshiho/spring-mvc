@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.RedirectView;
@@ -53,5 +54,17 @@ public class ResponseController {
     public View testViewRedirect() {
         View v = new RedirectView("redirect.jsp");
         return v;
+    }
+    @RequestMapping("/testModelAndViewForward")
+    public ModelAndView testModelAndViewForward() {
+        ModelAndView mv = new ModelAndView();
+        mv.setView(new InternalResourceView("forward.jsp"));
+        return mv;
+    }
+    @RequestMapping("/testModelAndViewRedirect")
+    public ModelAndView testModelAndViewRedirect() {
+        ModelAndView mv = new ModelAndView();
+        mv.setView(new RedirectView("redirect.jsp"));
+        return mv;
     }
 }
