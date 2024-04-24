@@ -18,11 +18,4 @@ public class ExceptionController {
         System.out.println(s.length());
         return "success.jsp";
     }
-
-    @ExceptionHandler(value = {ArithmeticException.class, NullPointerException.class})
-    public ModelAndView handleException() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("exception.jsp");
-        return mv;
-    }
 }

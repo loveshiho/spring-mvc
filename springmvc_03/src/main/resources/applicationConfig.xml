@@ -13,7 +13,7 @@
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!--包扫描 仅仅扫描service层-->
     <context:component-scan base-package="com.akai.service"/>
-    <context:component-scan base-package="com.akai.exceptionhandler"/>
+
     <!--配置数据源-->
     <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
         <property name="driverClassName" value="${jdbc_driver}"/>
@@ -43,4 +43,13 @@
     </bean>
     <!--开启事务注解-->
     <tx:annotation-driven/>
+    <!--异常处理器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.ArithmeticException">exception.jsp</prop>
+                <prop key="java.lang.NullPointerException">exception.jsp</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
