@@ -12,8 +12,6 @@
 </head>
 <body>
     登录成功
-<%
-    System.out.println("jsp invoked~");
-%>
+    ${requestScope.msg}
 </body>
 </html>

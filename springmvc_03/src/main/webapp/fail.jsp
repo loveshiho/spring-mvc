@@ -12,5 +12,6 @@
 </head>
 <body>
     登录失败
+    ${requestScope.msg}
 </body>
 </html>
