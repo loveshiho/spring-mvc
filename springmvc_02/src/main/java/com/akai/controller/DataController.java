@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -33,6 +34,20 @@ public class DataController {
         ServletContext application = req.getServletContext();
         application.setAttribute("msg", "halo application");
         application.setAttribute("users", all);
+        return "show.jsp";
+    }
+    /*model对象addAttribute
+     * 主要是对请求域传递数据进行了API上的封装
+     * 降低controller和Servlet之间的耦合度
+     * 重定向下,没法使用model传递域中的数据
+     * model中字符串类型的键值对信息,会转换为请求参数,转发给目标组件
+     * */
+    @RequestMapping("/testModel")
+    public String testModel(Model model) {
+        List<User> all = userService.findAll();
+        /*添加数据*/
+        model.addAttribute("msg", "halo req");
+        model.addAttribute("users", all);
         return "show.jsp";
     }
 }
