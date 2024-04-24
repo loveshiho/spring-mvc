@@ -4,7 +4,14 @@
     <title>Title</title>
 </head>
 <body>
+login:
 <form action="login" method="post">
+    <input type="text" name="name">
+    <input type="password" name="password">
+    <input type="submit" value="登录">
+</form>
+testRequestBody:
+<form action="testRequestBody" method="post">
     <input type="text" name="name">
     <input type="password" name="password">
     <input type="submit" value="登录">
